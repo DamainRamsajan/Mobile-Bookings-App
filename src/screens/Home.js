@@ -33,8 +33,8 @@ export default Home
 const styles = StyleSheet.create({
     image: {
         flex: 1,
-        width: 415,
-        height: "100%", 
+        width: "100%",
+        height: 500, 
         // alignItems: 'center', 
         justifyContent: "center",
         resizeMode: 'cover',
@@ -42,20 +42,21 @@ const styles = StyleSheet.create({
     },
     title: {
         color: "white",
-        fontSize: 106,
+        fontSize: 96,
         fontWeight: "900",
         marginLeft: 10,
         // textAlign: 'center',         
     },
     button: {
         backgroundColor: "white",
-        width: 265,
+        width: 180,
         height: 47,
-        borderRadius: 25,
+        borderRadius: 10,
         alignItems: "center",
         justifyContent: "center",
         marginTop: 20,
         marginLeft: 10,
+        marginBottom: 250,
     },
     searchButton: {
         backgroundColor: "white",
