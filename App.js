@@ -6,6 +6,7 @@ import HomeScreen from './src/screens/Home';
 import Listing from './src/components/Listing';
 import feed from './assets/data/feed';
 import SearchResults from './src/screens/SearchResults';
+import DestinationSearch from './src/screens/DestinationSearch';
 
 const listing1 = feed[0];
 
@@ -14,14 +15,15 @@ export default function App() {
     <View style={styles.container}>
       {/* <HomeScreen /> */}
       {/* <Listing listing = {listing1}/> */}
-      <SearchResults />
+      {/* <SearchResults /> */}
+      <DestinationSearch />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    // flex: 1,    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',

@@ -5,7 +5,7 @@ import Listing from '../components/Listing'
 
 const SearchResults = (props) => {
     return (
-        <View>
+        <View style = {styles.container}>
             <FlatList 
                 data ={feed}
                 renderItem={({item}) => <Listing listing={item} />}
@@ -17,4 +17,8 @@ const SearchResults = (props) => {
 
 export default SearchResults
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container: {
+        left: -20,
+    }
+})
