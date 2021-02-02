@@ -1,18 +1,21 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, Dimensions } from 'react-native';
 
-const Listing = () => {
+const Listing = (props) => {
+
+    const listing = props.listing;
+
     return (
         <View style = {styles.container}>
-            <Image source = {require("../../assets/oneBedroomVilla.jpg")} style = {styles.image}/>
+            <Image source = {{uri: listing.image}} style = {styles.image}/>
             
-            <Text style = {styles.bedrooms}>1 Bed 1 Bedroom</Text>
-            <Text style = {styles.description} numberOfLines = {2}>Soft sand, warm water and just enough room for the two of you—what could be more romantic than a getaway to this Villa? Tucked into a crescent of beach on Sapodilla Bay</Text>
+            <Text style = {styles.bedrooms}>{listing.bed} Bed {listing.bedroom} Bedroom</Text>
+            <Text style = {styles.description} numberOfLines = {2}>{listing.type}, {listing.title} {listing.description}</Text>
             <Text style = {styles.prices}>
-                <Text style = {styles.oldPrice}>1,299 </Text>
-                <Text style = {styles.newPrice}> 999 / night</Text>
+                <Text style = {styles.oldPrice}>${listing.oldPrice} </Text>
+                <Text style = {styles.newPrice}> ${listing.newPrice} / night</Text>
             </Text>
-            <Text style = {styles.totalPrice}>1,998 total</Text>
+            <Text style = {styles.totalPrice}>${listing.totalPrice} total</Text>
         </View>
     )
 }
