@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ImageBackground, Pressable, Dimensions } from '
 import { FontAwesome5 } from '@expo/vector-icons';
 
 const Home = () => {
+    const height = Dimensions.get('window').height;
     return (
         <View>
 
@@ -13,7 +14,7 @@ const Home = () => {
                     <FontAwesome5 name="search" size={24} color="black" />
                     <Text style = {styles.searchButtonText}>Where are you going?</Text>
             </Pressable>
-            <ImageBackground source = {require("../../assets/wallpaper.jpg")} style = {styles.image}>
+            <ImageBackground source = {require("../../assets/wallpaper.jpg")} style={[styles.image, { height: height }]}>
 
                 {/* Title */}
                 <Text style = {styles.title}>Break Away</Text>
@@ -32,9 +33,10 @@ export default Home
 
 const styles = StyleSheet.create({
     image: {
+        
         flex: 1,
         width: "100%",
-        height: 500, 
+        // height: {height}, 
         // alignItems: 'center', 
         justifyContent: "center",
         resizeMode: 'cover',
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
         borderRadius: 35,
         alignItems: "center",
         justifyContent: "center",
-        marginTop: 20,
+        // marginTop: 20,
         display: "flex",
         flexDirection: "row",
         top: 80,
