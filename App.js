@@ -1,25 +1,40 @@
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import HomeScreen from './src/screens/Home';
+
+import {NavigationContainer, StackActions} from "@react-navigation/native";
+import { createStackNavigator } from '@react-navigation/stack';
+
+
 import Listing from './src/components/Listing';
 import feed from './assets/data/feed';
-import SearchResults from './src/screens/SearchResults';
-import DestinationSearch from './src/screens/DestinationSearch';
-import Guests from './src/screens/Guests';
+import HomeScreen from './src/screens/Home';
+import SearchResultsScreen from './src/screens/SearchResults';
+import DestinationSearchScreen from './src/screens/DestinationSearch';
+import GuestsScreen from './src/screens/Guests';
 
 const listing1 = feed[0];
+const Stack = createStackNavigator ();
+
+const globalScreenOptions = {
+  headerStyle: {backgroundColor: "#2A4E70"},
+  headerTitleStyle: {color: "white"},
+  headerTintColor: "white",
+}
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      {/* <HomeScreen /> */}
-      {/* <Listing listing = {listing1}/> */}
-      {/* <SearchResults /> */}
-      {/* <DestinationSearch /> */}
-      <Guests/>
-    </View>
+    <NavigationContainer >
+      <Stack.Navigator screenOptions = {globalScreenOptions}>
+        <Stack.Screen name = "Home" component = {HomeScreen} />
+        <Stack.Screen name = "SearchResults" component = {SearchResultsScreen} />
+        <Stack.Screen name = "DestinationSearch" component = {DestinationSearchScreen} />
+        <Stack.Screen name = "Guests" component = {GuestsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+
   );
 }
 
@@ -27,7 +42,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,    
     backgroundColor: '#fff',
-    // alignItems: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
   },
 });
