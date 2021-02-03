@@ -7,6 +7,7 @@ import Listing from './src/components/Listing';
 import feed from './assets/data/feed';
 import SearchResults from './src/screens/SearchResults';
 import DestinationSearch from './src/screens/DestinationSearch';
+import Guests from './src/screens/Guests';
 
 const listing1 = feed[0];
 
@@ -16,7 +17,8 @@ export default function App() {
       {/* <HomeScreen /> */}
       {/* <Listing listing = {listing1}/> */}
       {/* <SearchResults /> */}
-      <DestinationSearch />
+      {/* <DestinationSearch /> */}
+      <Guests/>
     </View>
   );
 }
@@ -25,7 +27,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,    
     backgroundColor: '#fff',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
 });
