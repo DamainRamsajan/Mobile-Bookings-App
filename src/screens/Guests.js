@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Pressable } from 'react-native'
 import { StyleSheet, Text, View } from 'react-native'
 
-const Guests = () => {
+const Guests = ({navigation}) => {
 
     const [adults, setAdults] = useState(0);
     const [kids, setKids] = useState(0);
@@ -79,6 +79,13 @@ const Guests = () => {
                     </Pressable>
                 </View>
             </View>
+
+            
+            <Pressable onPress = {() => navigation.navigate("SearchResults")} style = {styles.searchButton}>
+                <Text style = {{fontSize: 18, color: "white", fontWeight: "bold"}}>Search</Text>
+            </Pressable>
+            
+
             <View style = {{height:200}}></View>
         </View>
     )
@@ -113,5 +120,16 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginHorizontal: 10,
         zIndex: 999,
+    },
+    searchButton: {
+        marginHorizontal: 20,
+        backgroundColor: "#f15454",
+        // alignSelf: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        // width: 150,
+        height: 35,
+        marginTop: 20,
+        borderRadius: 15,
     }
 })

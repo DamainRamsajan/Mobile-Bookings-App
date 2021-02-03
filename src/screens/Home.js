@@ -9,7 +9,7 @@ const Home = ({navigation}) => {
 
             <Pressable 
                     style ={styles.searchButton}
-                    onPress = {() => console.warn("search button clicked")}                
+                    onPress = {() => navigation.navigate("DestinationSearch")}                
                 >   
                     <FontAwesome5 name="search" size={24} color="black" />
                     <Text style = {styles.searchButtonText}>Where are you going?</Text>
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         justifyContent: "center"
     },
     image: {
-        top: -5,
+        top: -25,
         // flex: 1,
         width: "100%",
         height: Dimensions.get("screen").height, 
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         // marginTop: 20,
         display: "flex",
         flexDirection: "row",
-        top: 80,
+        top: 100,
         zIndex: 100,
         // marginBottom: 110,
     },
